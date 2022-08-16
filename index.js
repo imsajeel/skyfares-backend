@@ -13,6 +13,10 @@ const amadeus = new Amadeus({
 app.use(bp.json());
 app.use(bp.urlencoded({ extended: true }));
 
+app.get("/", (req, res) => {
+  res.send("Runing");
+});
+
 app.post("/get-airports", async (req, res) => {
   //   const { keyword } = req.body;
 
