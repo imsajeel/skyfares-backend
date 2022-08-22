@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
 const bp = require("body-parser");
+
+var cors = require("cors");
+
 require("dotenv").config();
 const port = process.env.PORT;
 
@@ -12,6 +15,8 @@ const amadeus = new Amadeus({
 
 app.use(bp.json());
 app.use(bp.urlencoded({ extended: true }));
+
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("Runing");
